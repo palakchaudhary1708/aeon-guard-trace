@@ -35,7 +35,7 @@ export function GatewayStage() {
         <meshBasicMaterial color={CYAN} transparent opacity={0.35} />
       </mesh>
       <LegalDocument position={[0, 0, -8]} scale={1.15} glow={1} />
-      <pointLight position={[0, 0, -6]} color={CYAN} intensity={16} distance={16} />
+      <pointLight position={[0, 0, -6]} color={CYAN} intensity={10} distance={14} />
       <ParticleField count={200} radius={7} opacity={0.35} />
     </group>
   );

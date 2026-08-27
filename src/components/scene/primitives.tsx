@@ -82,11 +82,11 @@ export function LegalDocument({
       <mesh>
         <planeGeometry args={[1.45, 2.05]} />
         <meshStandardMaterial
-          color="#0d1114"
-          roughness={0.75}
-          metalness={0.12}
+          color="#07090b"
+          roughness={0.92}
+          metalness={0.04}
           emissive={accent}
-          emissiveIntensity={glow * 0.08}
+          emissiveIntensity={glow * 0.025}
         />
       </mesh>
       <Edges geometry={border} color={accent} opacity={0.5} />

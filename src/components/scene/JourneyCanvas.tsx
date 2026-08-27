@@ -72,7 +72,7 @@ function Stages({ progressRef }: { progressRef: React.RefObject<number> }) {
     const camZ = 10 - progressRef.current * (TRACK + 10);
     groups.current.forEach((g, i) => {
       if (!g) return;
-      g.visible = Math.abs(camZ - -i * STAGE_GAP) < 40;
+      g.visible = Math.abs(camZ - -i * STAGE_GAP) < 32;
     });
   });
   return (

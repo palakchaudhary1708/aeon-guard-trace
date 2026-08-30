@@ -43,7 +43,7 @@ export function Header({ visible }: { visible: boolean }) {
 
 export function ProgressRail({ progress }: { progress: number }) {
   return (
-    <div className="fixed right-6 top-1/2 z-30 hidden h-48 w-px -translate-y-1/2 bg-white/10 lg:block">
+    <div className="layer-overlay fixed right-6 top-1/2 hidden h-48 w-px -translate-y-1/2 bg-white/10 lg:block">
       <span
         className="absolute left-1/2 block h-8 w-px -translate-x-1/2 bg-cyan shadow-[0_0_10px_var(--cyan)] transition-[top] duration-200"
         style={{ top: `${progress * 100}%` }}

@@ -7,11 +7,13 @@ export function Header({ visible }: { visible: boolean }) {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-40 transition-all duration-700",
+        "layer-navbar fixed inset-x-0 top-0 isolate transition-all duration-700",
+        "bg-[#050505]/78 backdrop-blur-xl backdrop-saturate-150",
+        "[mask-image:none] supports-[backdrop-filter:blur(0px)]:bg-[#050505]/62",
         visible ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0",
       )}
     >
-      <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 md:px-12">
+      <div className="relative mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 md:px-12">
         <a href="#overview" className="flex items-center gap-3">
           <span className="block size-1.5 rounded-full bg-cyan shadow-[0_0_12px_var(--cyan)]" />
           <span className="label-xs text-foreground/90">Veritas Ledger</span>
@@ -41,7 +43,7 @@ export function Header({ visible }: { visible: boolean }) {
 
 export function ProgressRail({ progress }: { progress: number }) {
   return (
-    <div className="fixed right-6 top-1/2 z-30 hidden h-48 w-px -translate-y-1/2 bg-white/10 lg:block">
+    <div className="layer-overlay fixed right-6 top-1/2 hidden h-48 w-px -translate-y-1/2 bg-white/10 lg:block">
       <span
         className="absolute left-1/2 block h-8 w-px -translate-x-1/2 bg-cyan shadow-[0_0_10px_var(--cyan)] transition-[top] duration-200"
         style={{ top: `${progress * 100}%` }}
@@ -179,8 +181,10 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "relative flex w-full items-center px-6 md:px-12",
-        tall ? "min-h-[220vh] items-start pt-[35vh]" : "min-h-screen",
+        "relative flex w-full scroll-mt-[var(--navbar-h)] items-center px-6 md:px-12",
+        tall
+          ? "min-h-[220vh] items-start pt-[calc(35vh+var(--navbar-h))]"
+          : "min-h-screen py-[calc(var(--navbar-h)+1rem)]",
       )}
     >
       <div

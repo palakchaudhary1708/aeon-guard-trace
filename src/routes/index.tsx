@@ -68,7 +68,7 @@ function Journey() {
   return (
     <main className="relative bg-[#050505] text-foreground">
       {/* 3D layer */}
-      <div className="pointer-events-none fixed inset-0 z-0">
+      <div className="layer-scene pointer-events-none fixed inset-0">
         {show3d ? (
           <Suspense fallback={null}>
             <JourneyCanvas progressRef={progressRef} quality={mobile ? "low" : "high"} />
@@ -82,7 +82,7 @@ function Journey() {
       <Header visible={progress > 0.02} />
       <ProgressRail progress={progress} />
 
-      <div className="relative z-10">
+      <div className="layer-content relative">
         {/* 00 — Opening */}
         <Section id="overview" align="center">
           <Reveal>

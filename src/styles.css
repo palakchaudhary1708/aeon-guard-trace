@@ -176,6 +176,45 @@
   }
 }
 
+/*
+ * Layering hierarchy (single source of truth):
+ *   base content ......... 0
+ *   3D / background ...... 1
+ *   interactive content .. 20
+ *   overlays ............. 100
+ *   navbar ............... 9999
+ *   system modals ........ 10000+
+ */
+:root {
+  --z-scene: 1;
+  --z-content: 20;
+  --z-overlay: 100;
+  --z-navbar: 9999;
+  --navbar-h: 64px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --navbar-h: 72px;
+  }
+}
+
+@utility layer-scene {
+  z-index: var(--z-scene);
+}
+
+@utility layer-content {
+  z-index: var(--z-content);
+}
+
+@utility layer-overlay {
+  z-index: var(--z-overlay);
+}
+
+@utility layer-navbar {
+  z-index: var(--z-navbar);
+}
+
 @utility label-xs {
   font-size: 0.6875rem;
   line-height: 1;

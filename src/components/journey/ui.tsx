@@ -181,8 +181,10 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "relative flex w-full items-center px-6 md:px-12",
-        tall ? "min-h-[220vh] items-start pt-[35vh]" : "min-h-screen",
+        "relative flex w-full scroll-mt-[var(--navbar-h)] items-center px-6 md:px-12",
+        tall
+          ? "min-h-[220vh] items-start pt-[calc(35vh+var(--navbar-h))]"
+          : "min-h-screen py-[calc(var(--navbar-h)+1rem)]",
       )}
     >
       <div

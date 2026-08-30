@@ -7,11 +7,13 @@ export function Header({ visible }: { visible: boolean }) {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-40 transition-all duration-700",
+        "layer-navbar fixed inset-x-0 top-0 isolate transition-all duration-700",
+        "bg-[#050505]/78 backdrop-blur-xl backdrop-saturate-150",
+        "[mask-image:none] supports-[backdrop-filter:blur(0px)]:bg-[#050505]/62",
         visible ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0",
       )}
     >
-      <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 md:px-12">
+      <div className="relative mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 md:px-12">
         <a href="#overview" className="flex items-center gap-3">
           <span className="block size-1.5 rounded-full bg-cyan shadow-[0_0_12px_var(--cyan)]" />
           <span className="label-xs text-foreground/90">Veritas Ledger</span>

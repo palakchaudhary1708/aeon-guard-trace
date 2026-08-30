@@ -82,7 +82,7 @@ function Journey() {
       <Header visible={progress > 0.02} />
       <ProgressRail progress={progress} />
 
-      <div className="relative z-10">
+      <div className="layer-content relative">
         {/* 00 — Opening */}
         <Section id="overview" align="center">
           <Reveal>
